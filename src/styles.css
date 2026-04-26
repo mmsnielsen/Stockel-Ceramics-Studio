@@ -1,4 +1,180 @@
-.awelcomingcreativecommunityspacededicatedto_span {
+.ceramics-studio-webpage {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: white;
+}
+
+.body {
+  width: 1030px;
+  height: 708px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: inline-flex;
+}
+
+.root {
+  align-self: stretch;
+  height: 5803.84px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+}
+
+.main-content {
+  align-self: stretch;
+  height: 5699.84px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+}
+
+.header {
+  width: 1030px;
+  height: 80px;
+  padding-left: 16px;
+  padding-right: 16px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow:
+    0px 1px 2px -1px rgba(0, 0, 0, 0.1),
+    0px 1px 3px rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+  align-items: center;
+  display: inline-flex;
+}
+
+.link_02 {
+  width: 210.25px;
+  height: 32px;
+  position: relative;
+}
+
+.stockel_span {
+  color: #973c00;
+  font-size: 24px;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0.07px;
+  word-wrap: break-word;
+}
+
+.stockel {
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
+
+.header_01 {
+  width: 20px;
+  height: 20px;
+  left: 84.35px;
+  top: 6px;
+  position: absolute;
+  border: 2px #973c00 solid;
+}
+
+.ceramics_span {
+  color: #973c00;
+  font-size: 24px;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0.07px;
+  word-wrap: break-word;
+}
+
+.ceramics {
+  left: 112.35px;
+  top: 0px;
+  position: absolute;
+}
+
+.navigation {
+  width: 534.69px;
+  height: 24px;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 32px;
+  display: flex;
+}
+
+.link_03 {
+  width: 43.65px;
+  height: 24px;
+  position: relative;
+}
+
+.link_04 {
+  width: 81.2px;
+  height: 24px;
+  position: relative;
+}
+
+.link_05 {
+  width: 56.25px;
+  height: 24px;
+  position: relative;
+}
+
+.link_06 {
+  flex: 1 1 0;
+  height: 24px;
+  position: relative;
+}
+
+.link_07 {
+  width: 57.62px;
+  height: 24px;
+  position: relative;
+}
+
+.hero {
+  align-self: stretch;
+  height: 708px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 256px;
+  padding-bottom: 256px;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  overflow: hidden;
+  background-image: url(https://placehold.co/1030x708);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  display: flex;
+}
+
+.paragraph {
+  width: 672px;
+  height: 96px;
+  position: relative;
+  opacity: 0.95;
+}
+
+.welcome-intro {
+  width: 672px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  text-align: center;
+}
+
+.welcome_intro_span {
   color: white;
   font-size: 24px;
   font-family: Inter;
@@ -8,12 +184,27 @@
   word-wrap: break-word;
 }
 
-.a-welcoming-creative-community-space-dedicated-to {
-  width: 672px;
+.container {
+  width: 291.15px;
+  height: 60px;
+  position: relative;
+}
+
+.link {
+  width: 118.68px;
+  height: 60px;
   left: 0px;
   top: 0px;
   position: absolute;
-  text-align: center;
+  border-radius: 8px;
+  outline: 2px white solid;
+  outline-offset: -2px;
+}
+
+.gallery {
+  left: 34px;
+  top: 17.5px;
+  position: absolute;
 }
 
 .gallery_span {
@@ -25,7 +216,18 @@
   word-wrap: break-word;
 }
 
-.gallery {
+.link_01 {
+  width: 156.47px;
+  height: 60px;
+  left: 134.68px;
+  top: 0px;
+  position: absolute;
+  border-radius: 8px;
+  outline: 2px white solid;
+  outline-offset: -2px;
+}
+
+.studio-shop {
   left: 34px;
   top: 17.5px;
   position: absolute;
@@ -38,12 +240,6 @@
   font-weight: 400;
   line-height: 24px;
   word-wrap: break-word;
-}
-
-.studio-shop {
-  left: 34px;
-  top: 17.5px;
-  position: absolute;
 }
 
 .aboutourstudio_span {
@@ -62,7 +258,7 @@
   position: absolute;
 }
 
-.foundedin2015claycraftstudiohasbeenacr_span {
+.studio_intro_span {
   color: #364153;
   font-size: 18px;
   font-family: Inter;
@@ -71,30 +267,14 @@
   word-wrap: break-word;
 }
 
-.founded-in-2015-clay-craft-studio-has-been-a-cr {
+.studio-intro {
   width: 475px;
   left: 0px;
   top: 64px;
   position: absolute;
 }
 
-.whetheryourelookingtoexploreanewhobbycre_span {
-  color: #364153;
-  font-size: 18px;
-  font-family: Inter;
-  font-weight: 400;
-  line-height: 28px;
-  word-wrap: break-word;
-}
-
-.whether-youre-looking-to-explore-a-new-hobby-cre {
-  width: 475px;
-  left: 0px;
-  top: 228px;
-  position: absolute;
-}
-
-.imagewithfallback {
+.studio-image {
   align-self: stretch;
   height: 317.09px;
   position: relative;
@@ -109,7 +289,7 @@
   border-radius: 16777200px;
 }
 
-.passionforcraft_span {
+.studio_team_span {
   color: #0a0a0a;
   font-size: 20px;
   font-family: Inter;
@@ -118,14 +298,14 @@
   word-wrap: break-word;
 }
 
-.passion-for-craft {
+.studio-team-left {
   left: 78.23px;
   top: 0px;
   position: absolute;
   text-align: center;
 }
 
-.webelieveinthetransformativepowerofworking_span {
+.studio_manager_intro_span {
   color: #4a5565;
   font-size: 16px;
   font-family: Inter;
@@ -134,7 +314,7 @@
   word-wrap: break-word;
 }
 
-.we-believe-in-the-transformative-power-of-working {
+.studio-manager-intro {
   width: 312px;
   left: 0px;
   top: -0.5px;
@@ -151,23 +331,14 @@
   border-radius: 16777200px;
 }
 
-.communityfocused_span {
-  color: #0a0a0a;
-  font-size: 20px;
-  font-family: Inter;
-  font-weight: 500;
-  line-height: 28px;
-  word-wrap: break-word;
-}
-
-.community-focused {
+.studio-team-centre {
   left: 61.04px;
   top: 0px;
   position: absolute;
   text-align: center;
 }
 
-.joinavibrantcommunityofartistsandmakerswho_span {
+.teacher_01_span {
   color: #4a5565;
   font-size: 16px;
   font-family: Inter;
@@ -176,7 +347,7 @@
   word-wrap: break-word;
 }
 
-.join-a-vibrant-community-of-artists-and-makers-who {
+.teacher-01 {
   width: 312px;
   left: 0px;
   top: -0.5px;
@@ -193,32 +364,14 @@
   border-radius: 16777200px;
 }
 
-.expertguidance_span {
-  color: #0a0a0a;
-  font-size: 20px;
-  font-family: Inter;
-  font-weight: 500;
-  line-height: 28px;
-  word-wrap: break-word;
-}
-
-.expert-guidance {
+.studio-team-right {
   left: 79.31px;
   top: 0px;
   position: absolute;
   text-align: center;
 }
 
-.learnfromskilledinstructorswithyearsofexper_span {
-  color: #4a5565;
-  font-size: 16px;
-  font-family: Inter;
-  font-weight: 400;
-  line-height: 24px;
-  word-wrap: break-word;
-}
-
-.learn-from-skilled-instructors-with-years-of-exper {
+.teacher-02 {
   width: 312px;
   left: 0px;
   top: -0.5px;
@@ -243,7 +396,7 @@
   text-align: center;
 }
 
-.deepenyourskillswithourintensiveworkshopsle_span {
+.intro_workshops_span {
   color: #4a5565;
   font-size: 16px;
   font-family: Inter;
@@ -252,7 +405,7 @@
   word-wrap: break-word;
 }
 
-.deepen-your-skills-with-our-intensive-workshops-le {
+.intro-workshops {
   width: 672px;
   left: 163px;
   top: 63.5px;
@@ -281,7 +434,7 @@
   position: absolute;
 }
 
-.tryyourhandatthepotterywheelinthisintrodu_span {
+.wheel-throwing-taster-description {
   color: #4a5565;
   font-size: 14px;
   font-family: Inter;
@@ -290,7 +443,7 @@
   word-wrap: break-word;
 }
 
-.try-your-hand-at-the-pottery-wheel-in-this-introdu {
+.workshop-description {
   width: 264px;
   left: 0px;
   top: 1px;
@@ -465,7 +618,7 @@
   position: absolute;
 }
 
-.handbuildandunderglazeyourownuniqueceramic_span {
+.make-a-mug-description {
   color: #4a5565;
   font-size: 14px;
   font-family: Inter;
@@ -474,7 +627,7 @@
   word-wrap: break-word;
 }
 
-.hand-build-and-underglaze-your-own-unique-ceramic {
+.workshop-description {
   width: 264px;
   left: 0px;
   top: 1px;
@@ -2926,47 +3079,6 @@
   outline-offset: -0.83px;
 }
 
-.stockel_span {
-  color: #973c00;
-  font-size: 24px;
-  font-family: Inter;
-  font-weight: 400;
-  line-height: 32px;
-  letter-spacing: 0.07px;
-  word-wrap: break-word;
-}
-
-.stockel {
-  left: 0px;
-  top: 0px;
-  position: absolute;
-}
-
-.header_01 {
-  width: 20px;
-  height: 20px;
-  left: 84.35px;
-  top: 6px;
-  position: absolute;
-  border: 2px #973c00 solid;
-}
-
-.ceramics_span {
-  color: #973c00;
-  font-size: 24px;
-  font-family: Inter;
-  font-weight: 400;
-  line-height: 32px;
-  letter-spacing: 0.07px;
-  word-wrap: break-word;
-}
-
-.ceramics {
-  left: 112.35px;
-  top: 0px;
-  position: absolute;
-}
-
 .about_01_span {
   color: #364153;
   font-size: 16px;
@@ -3055,35 +3167,6 @@
   left: 0px;
   top: -0.5px;
   position: absolute;
-}
-
-.paragraph {
-  width: 672px;
-  height: 96px;
-  position: relative;
-  opacity: 0.95;
-}
-
-.link {
-  width: 118.68px;
-  height: 60px;
-  left: 0px;
-  top: 0px;
-  position: absolute;
-  border-radius: 8px;
-  outline: 2px white solid;
-  outline-offset: -2px;
-}
-
-.link_01 {
-  width: 156.47px;
-  height: 60px;
-  left: 134.68px;
-  top: 0px;
-  position: absolute;
-  border-radius: 8px;
-  outline: 2px white solid;
-  outline-offset: -2px;
 }
 
 .container_03 {
@@ -3964,42 +4047,6 @@
   position: relative;
 }
 
-.link_03 {
-  width: 43.65px;
-  height: 24px;
-  position: relative;
-}
-
-.link_04 {
-  width: 81.2px;
-  height: 24px;
-  position: relative;
-}
-
-.link_05 {
-  width: 56.25px;
-  height: 24px;
-  position: relative;
-}
-
-.link_06 {
-  flex: 1 1 0;
-  height: 24px;
-  position: relative;
-}
-
-.link_07 {
-  width: 57.62px;
-  height: 24px;
-  position: relative;
-}
-
-.link_08 {
-  width: 37.58px;
-  height: 24px;
-  position: relative;
-}
-
 .container_04 {
   width: 475px;
   height: 317.09px;
@@ -4452,18 +4499,6 @@
   overflow: hidden;
 }
 
-.link_02 {
-  width: 210.25px;
-  height: 32px;
-  position: relative;
-}
-
-.container {
-  width: 291.15px;
-  height: 60px;
-  position: relative;
-}
-
 .container_05 {
   align-self: stretch;
   height: 230px;
@@ -4650,15 +4685,6 @@
   justify-content: flex-start;
   align-items: flex-start;
   gap: 8px;
-  display: flex;
-}
-
-.navigation {
-  width: 534.69px;
-  height: 24px;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 32px;
   display: flex;
 }
 
@@ -5055,27 +5081,6 @@
   display: flex;
 }
 
-.hero {
-  align-self: stretch;
-  height: 708px;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 256px;
-  padding-bottom: 256px;
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.4) 0%,
-    rgba(0, 0, 0, 0.4) 100%
-  );
-  overflow: hidden;
-  background-image: url(https://placehold.co/1030x708);
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  display: flex;
-}
-
 .container_108 {
   width: 287.73px;
   height: 116px;
@@ -5094,23 +5099,6 @@
   align-items: flex-start;
   gap: 16px;
   display: flex;
-}
-
-.header {
-  width: 1030px;
-  height: 80px;
-  padding-left: 16px;
-  padding-right: 16px;
-  left: 0px;
-  top: 0px;
-  position: absolute;
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow:
-    0px 1px 2px -1px rgba(0, 0, 0, 0.1),
-    0px 1px 3px rgba(0, 0, 0, 0.1);
-  justify-content: space-between;
-  align-items: center;
-  display: inline-flex;
 }
 
 .container_01 {
@@ -5747,41 +5735,4 @@
   justify-content: flex-start;
   align-items: flex-start;
   display: flex;
-}
-
-.main-content {
-  align-self: stretch;
-  height: 5699.84px;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  display: flex;
-}
-
-.root {
-  align-self: stretch;
-  height: 5803.84px;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  display: flex;
-}
-
-.body {
-  width: 1030px;
-  height: 708px;
-  left: 0px;
-  top: 0px;
-  position: absolute;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  display: inline-flex;
-}
-
-.ceramics-studio-webpage {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  background: white;
 }
