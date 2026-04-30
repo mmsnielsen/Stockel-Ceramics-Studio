@@ -1,245 +1,108 @@
-.ceramics-studio-webpage {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  background: white;
+/* 1. Global Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.body {
-  width: 1030px;
-  height: 708px;
-  left: 0px;
-  top: 0px;
-  position: absolute;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  display: inline-flex;
+body {
+  font-family: "Inter", sans-serif;
+  background-color: white;
+  color: #4a5565;
 }
 
-.root {
-  align-self: stretch;
-  height: 5803.84px;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  display: flex;
-}
-
-.main-content {
-  align-self: stretch;
-  height: 5699.84px;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  display: flex;
-}
-
+/* 2. Header & Logo */
 .header {
-  width: 1030px;
+  width: 100%; /* Changed from 1030px to be responsive */
   height: 80px;
-  padding-left: 16px;
-  padding-right: 16px;
-  left: 0px;
-  top: 0px;
-  position: absolute;
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow:
-    0px 1px 2px -1px rgba(0, 0, 0, 0.1),
-    0px 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 0 40px;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  display: inline-flex;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: sticky; /* Keeps header at top while scrolling */
+  top: 0;
+  z-index: 1000;
 }
 
-.link_02 {
-  width: 210.25px;
-  height: 32px;
-  position: relative;
-}
-
-.stockel_span {
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   color: #973c00;
   font-size: 24px;
-  font-family: Inter;
   font-weight: 400;
-  line-height: 32px;
-  letter-spacing: 0.07px;
-  word-wrap: break-word;
+  text-decoration: none;
 }
 
-.stockel {
-  left: 0px;
-  top: 0px;
-  position: absolute;
-}
-
-.header_01 {
+.logo__square {
   width: 20px;
   height: 20px;
-  left: 84.35px;
-  top: 6px;
-  position: absolute;
-  border: 2px #973c00 solid;
+  border: 2px solid #973c00;
 }
 
-.ceramics_span {
-  color: #973c00;
-  font-size: 24px;
-  font-family: Inter;
-  font-weight: 400;
-  line-height: 32px;
-  letter-spacing: 0.07px;
-  word-wrap: break-word;
-}
-
-.ceramics {
-  left: 112.35px;
-  top: 0px;
-  position: absolute;
-}
-
-.navigation {
-  width: 534.69px;
-  height: 24px;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 32px;
+/* 3. Navigation */
+.nav-list {
   display: flex;
+  list-style: none;
+  gap: 32px;
 }
 
-.link_03 {
-  width: 43.65px;
-  height: 24px;
-  position: relative;
+.nav-link {
+  text-decoration: none;
+  color: #4a5565;
+  font-size: 16px;
+  transition: color 0.2s;
 }
 
-.link_04 {
-  width: 81.2px;
-  height: 24px;
-  position: relative;
+.nav-link:hover {
+  color: #973c00;
 }
 
-.link_05 {
-  width: 56.25px;
-  height: 24px;
-  position: relative;
-}
-
-.link_06 {
-  flex: 1 1 0;
-  height: 24px;
-  position: relative;
-}
-
-.link_07 {
-  width: 57.62px;
-  height: 24px;
-  position: relative;
-}
-
+/* 4. Hero Section */
 .hero {
-  align-self: stretch;
-  height: 708px;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 256px;
-  padding-bottom: 256px;
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.4) 0%,
-    rgba(0, 0, 0, 0.4) 100%
-  );
-  overflow: hidden;
-  background-image: url(https://placehold.co/1030x708);
+  min-height: 700px;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 40px;
-  display: flex;
-}
-
-.paragraph {
-  width: 672px;
-  height: 96px;
-  position: relative;
-  opacity: 0.95;
-}
-
-.welcome-intro {
-  width: 672px;
-  left: 0px;
-  top: 0px;
-  position: absolute;
   text-align: center;
+  padding: 40px;
+  gap: 40px;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("https://placehold.co") no-repeat center center/cover;
 }
 
-.welcome_intro_span {
+.hero__intro {
+  max-width: 700px;
   color: white;
   font-size: 24px;
-  font-family: Inter;
-  font-weight: 400;
-  line-height: 32px;
-  letter-spacing: 0.07px;
-  word-wrap: break-word;
+  line-height: 1.4;
 }
 
-.container {
-  width: 291.15px;
-  height: 60px;
-  position: relative;
+/* 5. Buttons */
+.hero__actions {
+  display: flex;
+  gap: 20px;
 }
 
-.link {
-  width: 118.68px;
-  height: 60px;
-  left: 0px;
-  top: 0px;
-  position: absolute;
+.gallery-btn,
+.shop-btn {
+  padding: 16px 32px;
+  border: 2px solid white;
   border-radius: 8px;
-  outline: 2px white solid;
-  outline-offset: -2px;
-}
-
-.gallery {
-  left: 34px;
-  top: 17.5px;
-  position: absolute;
-}
-
-.gallery_span {
   color: white;
+  text-decoration: none;
   font-size: 16px;
-  font-family: Inter;
-  font-weight: 400;
-  line-height: 24px;
-  word-wrap: break-word;
+  transition: background 0.3s;
 }
 
-.link_01 {
-  width: 156.47px;
-  height: 60px;
-  left: 134.68px;
-  top: 0px;
-  position: absolute;
-  border-radius: 8px;
-  outline: 2px white solid;
-  outline-offset: -2px;
-}
-
-.studio-shop {
-  left: 34px;
-  top: 17.5px;
-  position: absolute;
-}
-
-.studioshop_span {
-  color: white;
-  font-size: 16px;
-  font-family: Inter;
-  font-weight: 400;
-  line-height: 24px;
-  word-wrap: break-word;
+.gallery-btn:hover,
+.shop-btn:hover {
+  background: white;
+  color: #333;
 }
 
 .aboutourstudio_span {
