@@ -105,6 +105,28 @@ body {
   color: #333;
 }
 
+.gallery-grid {
+  display: grid;
+  /* This creates 3 columns that resize automatically */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto; /* Centers the whole grid */
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover; /* Keeps images from looking squished */
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.02); /* Subtle pop effect on hover */
+}
+
 .aboutourstudio_span {
   color: #973c00;
   font-size: 32px;
