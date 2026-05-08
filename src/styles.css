@@ -127,7 +127,7 @@ body {
   transform: scale(1.02); /* Subtle pop effect on hover */
 }
 
-/* STUDIO SHOP PAHGE */
+/* STUDIO SHOP PAGE */
 
 .studio-webpage {
   background-color: #fcfcfc;
@@ -173,7 +173,7 @@ body {
   transition: transform 0.2s ease;
 }
 
-.product-card_image {
+.product-card__image {
   background-color: #f2f2f2; /* Light grey background behind the products */
   height: 250px;
   display: flex;
@@ -181,59 +181,77 @@ body {
   align-items: center;
 }
 
-.product-card_image img {
+.product-card__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.product-card_info {
+.product-card__info {
   padding: 20px;
 }
 
-.product-card_title {
+.product-card__title {
   font-size: 18px;
   color: #333;
   margin-bottom: 8px;
 }
 
-.product-card_description {
+.product-card__description {
   font-size: 14px;
   color: #666;
   margin-bottom: 20px;
   line-height: 1.4;
 }
 
-.product-card_footer {
+.product-card__footer {
   align-items: center;
   border-top: 1px solid #f0f0f0;
   display: flex;
-  justify-content: space-between;
-  padding-top: 15px;
+  width: 100%;
 }
 
-.product-card_price {
+.product-card__price {
+  color: #973c00; /* Your brand orange */
+  display: inline-flex;
   font-size: 20px;
   font-weight: 500;
-  color: #973c00; /* Your brand orange */
+  line-height: 1;
+  margin: 0;
+  padding-top: 20px;
+  transform: translateY(6px);
+  width: auto;
 }
 
 .btn-buy {
+  align-items: center;
   background-color: #973c00;
   border: none;
   border-radius: 6px;
-  width: 40px;
-  height: 40px;
   cursor: pointer;
   display: flex;
+  height: 40px;
   justify-content: center;
-  align-items: center;
+  margin: auto;
   transition: background 0.2s;
+  width: 40px;
 }
 
 .btn-buy:hover {
   background-color: #7a3100;
   opacity: 0.8;
+  transition:
+    background 0.2s,
+    opacity 0.2s;
+}
+
+.btn-buy__icon {
+  color: white;
+  display: block;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1;
+  transform: translateY(-1px);
 }
 
 /* FIGMA GENERATED CSS */
