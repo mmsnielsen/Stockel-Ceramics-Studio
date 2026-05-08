@@ -62,17 +62,25 @@ body {
 
 /* 4. Hero Section */
 .hero {
+  position: relative; /* Essential for containing the absolute image */
   min-height: 700px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 40px;
-  gap: 40px;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("https://placehold.co") no-repeat center center/cover;
+  overflow: hidden; /* Keeps the image inside the hero box */
+  background-color: #333; /* Fallback color so you can see if the hero exists */
+}
+
+.hero__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Prevents the image from being squashed */
+  opacity: 0.5;
+  z-index: 0; /* Changed from -1 to 0 */
 }
 
 .hero__intro {
@@ -80,12 +88,16 @@ body {
   color: white;
   font-size: 24px;
   line-height: 1.4;
+  position: relative; /* Needed for z-index to work */
+  z-index: 1; /* Ensures text is above the background image */
 }
 
 /* 5. Buttons */
 .hero__actions {
   display: flex;
   gap: 20px;
+  position: relative; /* Needed for z-index to work */
+  z-index: 1; /* Ensures buttons are above the background image */
 }
 
 .gallery-btn,
@@ -291,9 +303,10 @@ body {
 .about__image {
   width: 100%;
   height: auto;
-  border-radius: 70px 30px 90px 40px;
   object-fit: cover;
-  box-shadow: 15px 15px 0px #f9f9f9;
+  border-radius: 48% 52% 61% 45% / 51% 55% 45% 55%;
+  margin-bottom: 20px;
+  border: 4px solid #f2f2f2;
 }
 
 .values-grid {
