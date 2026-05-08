@@ -127,6 +127,117 @@ body {
   transform: scale(1.02); /* Subtle pop effect on hover */
 }
 
+/* STUDIO SHOP PAHGE */
+
+.studio-webpage {
+  background-color: #fcfcfc;
+}
+
+.shop-content {
+  padding: 80px 20px 20px 20px; /* More top room, less bottom room */
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center; /* Centers all text inside */
+}
+
+.shop-content h1 {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 16px; /* Space between H1 and P */
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+
+.shop-content p {
+  font-size: 18px;
+  color: #666;
+  max-width: 600px; /* Keeps the text from stretching too wide */
+  margin: 0 auto 40px auto; /* Centers the paragraph block and adds space below */
+  line-height: 1.6;
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Soft shadow */
+  transition: transform 0.2s ease;
+}
+
+.product-card_image {
+  background-color: #f2f2f2; /* Light grey background behind the products */
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-card_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-card_info {
+  padding: 20px;
+}
+
+.product-card_title {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.product-card_description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.product-card_footer {
+  align-items: center;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+}
+
+.product-card_price {
+  font-size: 20px;
+  font-weight: 500;
+  color: #973c00; /* Your brand orange */
+}
+
+.btn-buy {
+  background-color: #973c00;
+  border: none;
+  border-radius: 6px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.2s;
+}
+
+.btn-buy:hover {
+  background-color: #7a3100;
+  opacity: 0.8;
+}
+
+/* FIGMA GENERATED CSS */
+
 .aboutourstudio_span {
   color: #973c00;
   font-size: 32px;
