@@ -386,6 +386,7 @@ body {
   font-family: "Serif", Georgia, serif;
   font-size: 18px;
   font-weight: 600;
+  margin-top: 12px;
   margin-bottom: 8px;
   text-align: center;
 }
@@ -457,7 +458,7 @@ body {
 
 .offer__footer {
   font-size: 14px;
-  margin-top: 80px;
+  margin-top: 60px;
   opacity: 0.8;
   text-align: center;
 }
@@ -475,22 +476,68 @@ body {
 
 /* MEMBERSHIP SECTION */
 
-.offer-card__period {
-  color: #555;
-  display: block;
+.membership-card__price-box {
+  align-items: baseline;
+  display: flex;
+  font-family: "Serif", Georgia, serif;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+
+.membership-card__price {
+  color: #333;
+  display: flex;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.membership-card__period {
+  color: #777;
+  display: flex;
   font-size: 14px;
-  letter-spacing: 0.5px;
-  margin-bottom: 8px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.membership-card__description {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-top: 12px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .membership-benefits {
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 100px 40px;
+  color: #555;
+  font-family: inter, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: auto; /* Pushes the benefits list to the bottom of the card */
+  padding: 8px 20px 20px 20px;
 }
 
 .offer-card--most-popular {
   border: 2px solid #fef3c6;
+  position: relative;
+}
+
+.offer-card__badge {
+  background-color: #fef3c6;
+  color: #973c00;
+  border: 2px solid #fef3c6;
+  border-radius: 20px;
+  box-shadow: 0px 10px 20px rgba(254, 243, 198, 0.5); /* Soft orange glow */
+  font-size: 12px;
+  font-weight: 600;
+  left: 50%;
+  padding: 4px 12px;
+  position: absolute;
+  top: -10px;
+  transform: translateX(-50%);
 }
 
 .offer-card__register-btn--most-popular {
