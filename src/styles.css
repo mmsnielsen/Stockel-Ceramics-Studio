@@ -332,15 +332,15 @@ body {
   font-family: "Serif", Georgia, serif;
 }
 
-/* WORKSHOPS PAGE */
+/* WORKSHOPS + CLASSES SECTION */
 
-.workshops-section {
+.offer-section {
   margin: 0 auto;
   max-width: 1200px;
   padding: 100px 40px;
 }
 
-.workshops__header {
+.section__header {
   text-align: center;
   margin-bottom: 80px;
 }
@@ -350,13 +350,13 @@ body {
   font-family: "Serif", Georgia, serif;
 }
 
-.workshops__list {
+.section__list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
 }
 
-.workshop-card {
+.offer-card {
   background: white;
   border-radius: 8px;
   box-shadow:
@@ -366,7 +366,7 @@ body {
   flex-direction: column;
 }
 
-.workshop-card__image {
+.offer-card__image {
   border-radius: 12px;
   border: 3px solid #f2f2f2;
   height: 200px;
@@ -374,28 +374,34 @@ body {
   width: 100%;
 }
 
-.workshop-card__content {
+.offer-card__content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   padding: 20px 10px;
 }
 
-.workshop-card__title {
+.offer-card__title {
   color: #973c00;
   font-family: "Serif", Georgia, serif;
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 8px;
+  text-align: center;
 }
 
-.workshop-card__description {
+.offer-card__description {
   color: #555;
   font-size: 14px;
   line-height: 1.4;
+  margin-top: 12px;
   margin-bottom: 20px;
+  text-align: justify;
 }
 
-.workshop-card__date,
-.workshop-card__duration,
-.workshop-card__class-size {
+.offer-card__date,
+.offer-card__duration,
+.offer-card__class-size {
   color: #555;
   display: block;
   font-size: 14px;
@@ -403,31 +409,33 @@ body {
   margin-bottom: 8px;
 }
 
-.workshop-card__date {
+.offer-card__date {
   font-weight: 600;
+  margin-top: auto; /* Pushes the date to the bottom of the description */
 }
 
-.workshop-card__duration,
-.workshop-card__class-size {
+.offer-card__duration,
+.offer-card__class-size {
   font-weight: 400;
   opacity: 0.8;
 }
 
-.workshop-card__footer {
+.offer-card__footer {
   align-items: center;
   border-top: 1px solid #f0f0f0;
   display: flex;
   justify-content: space-evenly;
+  margin-top: auto;
   padding: 20px 10px;
 }
 
-.workshop-card__price {
+.offer-card__price {
   color: #973c00;
   font-size: 18px;
   font-weight: 500;
 }
 
-.workshop-card__register-btn {
+.offer-card__register-btn {
   background-color: #973c00;
   border: none;
   border-radius: 6px;
@@ -439,7 +447,7 @@ body {
   transition: background 0.2s;
 }
 
-.workshop-card__register-btn:hover {
+.offer-card__register-btn:hover {
   background-color: #7a3100;
   opacity: 0.8;
   transition:
@@ -447,25 +455,23 @@ body {
     opacity 0.2s;
 }
 
-.workshops__footer {
+.offer__footer {
   font-size: 14px;
   margin-top: 80px;
   opacity: 0.8;
   text-align: center;
 }
 
-.workshops__contact-link {
+.offer__contact-link {
   color: #973c00;
   font-weight: 600;
   text-decoration: none;
   transition: color 0.2s;
 }
 
-.workshops__contact-link:hover {
+.offer__contact-link:hover {
   color: #7a3100;
 }
-
-/* CLASSES */
 
 /* FIGMA GENERATED CSS */
 
