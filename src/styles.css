@@ -1,4 +1,8 @@
 /* 1. Global Reset & Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -780,3 +784,75 @@ body {
 }
 
 /* TERMS OF SERVICE + STUDENT CONTRACT */
+
+.terms-content,
+.contract-content {
+  background-color: #fcfcfc;
+  margin: 0 auto;
+  padding: 100px 20px;
+  width: 100%;
+}
+
+.terms-container,
+.contract-container {
+  margin: 0 auto;
+  max-width: 750px;
+  padding: 0 40px;
+}
+
+.terms-container h1,
+.contract-container h1 {
+  color: #973c00;
+  font-family: inter, sans-serif;
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.terms-section,
+.contract-section {
+  margin-top: 40px;
+}
+
+.terms-section h3,
+.contract-section h3 {
+  color: #973c00;
+  border-bottom: 1px solid #e5e7eb;
+  font-family: inter, sans-serif;
+  font-size: 12px;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+}
+
+.terms-section p,
+.contract-section li {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+.contract-section ul {
+  color: #555;
+}
+
+.contract-section li {
+  color: #555;
+  list-style-type: none;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.terms-section strong,
+.contract-section strong {
+  color: #973c00;
+}
+
+.contract-link {
+  color: #973c00;
+  text-decoration: none;
+}
+
+.contract-link:hover {
+  text-decoration: none;
+}
