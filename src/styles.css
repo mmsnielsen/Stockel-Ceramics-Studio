@@ -272,18 +272,29 @@ body {
 
 /* ABOUT SECTION */
 
+.about-section,
+.offer-section,
+.contact-section {
+  width: 100%;
+  padding: 60px 0;
+}
+
+.about__hero,
+.section__header,
+.section__list,
+.values-grid,
+.contact-us_container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px; /* Keeps your nice breathing room on the sides */
+}
+
 .bg-light {
   background-color: #fcfcfc;
 }
 
 .bg-shade {
   background-color: #f7f5f5;
-}
-
-.about-section {
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 100px 40px;
 }
 
 .about__hero {
@@ -346,15 +357,9 @@ body {
 
 /* WORKSHOPS + CLASSES SECTION */
 
-.offer-section {
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 100px 40px;
-}
-
 .section__header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .section-title {
@@ -569,14 +574,8 @@ body {
 
 /* CONTACT SECTION*/
 
-.contact-section {
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 100px 40px;
-}
-
 .contact-us_header {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   text-align: center;
 }
 
@@ -646,6 +645,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  margin-bottom: 40px;
   padding: 30px;
 }
 
@@ -696,7 +696,6 @@ body {
 .footer {
   background-color: #fcfcfc;
   font-family: "Inter", sans-serif;
-  margin-top: 80px;
   padding: 60px 40px 20px 40px;
 }
 
