@@ -64,6 +64,30 @@ body {
   color: #973c00;
 }
 
+.nav-cart {
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+.nav-cart__icon {
+  height: 20px;
+  margin-right: 10px;
+  opacity: 0.6;
+  width: 20px;
+}
+
+.nav-cart-count {
+  border-radius: 50%;
+  color: #555;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 6px;
+  position: absolute;
+  top: 0px;
+  right: -10px;
+}
+
 /* Hero Section */
 .hero {
   position: relative; /* Essential for containing the absolute image */
