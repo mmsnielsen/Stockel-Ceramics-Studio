@@ -456,21 +456,23 @@
             </div>
           </div>
 
-          <form class="contact-form">
+          <form class="contact-form" id="contact-form">
             <h3 class="form-header">Send us a message</h3>
-            <input type="text" name="name" placeholder="Your Name" required />
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              required
-            />
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              rows="5"
-              required
-            ></textarea>
+            <div class="user-details">
+              <input type="text" name="name" placeholder="Your Name" required />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+              />
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
             <button type="submit" class="btn-submit">Send Message</button>
           </form>
         </div>
@@ -531,8 +533,23 @@
           </div>
         </div>
       </footer>
-
-      <script src="src/index.js"></script>
     </main>
+
+    <!-- SENT MESSAGE CONFIRMATION -->
+
+    <div class="sent-message-overlay hidden" id="sent-message-popup">
+      <div class="sent-message-card">
+        <h2 class="sent-message__header">
+          <img
+            src="image/paper-plane.svg"
+            class="sent-message__image"
+            alt="paper plane icon"
+          />Message Sent!
+        </h2>
+        <p>Thank you for your message. We'll be in touch soon!.</p>
+      </div>
+    </div>
+
+    <script src="src/index.js"></script>
   </body>
 </html>
