@@ -18,11 +18,15 @@
 
         <nav class="navigation">
           <ul class="nav-list">
-            <li><a href="#about" class="nav-link">About</a></li>
-            <li><a href="#workshops" class="nav-link">Workshops</a></li>
-            <li><a href="#classes" class="nav-link">Classes</a></li>
-            <li><a href="#memberships" class="nav-link">Memberships</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li><a href="index.html#about" class="nav-link">About</a></li>
+            <li>
+              <a href="index.html#workshops" class="nav-link">Workshops</a>
+            </li>
+            <li><a href="index.html#classes" class="nav-link">Classes</a></li>
+            <li>
+              <a href="index.html#memberships" class="nav-link">Memberships</a>
+            </li>
+            <li><a href="index.html#contact" class="nav-link">Contact</a></li>
             <li>
               <a href="#" class="nav-link nav-cart" id="nav-cart-trigger">
                 <img
@@ -308,8 +312,8 @@
           <div class="site-footer__top-row">
             <nav class="site-footer__nav">
               <a href="index.html">Home</a>
-              <a href="#about">Our Story</a>
-              <a href="#workshops">Courses</a>
+              <a href="index.html#about">Our Story</a>
+              <a href="index.html#workshops">Courses</a>
               <a href="shop.html">Studio Shop</a>
               <a href="gallery.html">Gallery</a>
               <a href="terms.html">Terms of Service</a>
@@ -328,7 +332,7 @@
                 />
               </a>
               <a
-                href="#contact"
+                href="index.html#contact"
                 aria-label="Contact Email"
                 class="social-icons"
               >
@@ -357,5 +361,37 @@
         </div>
       </footer>
     </main>
+
+    <!-- CART SIDEBAR -->
+
+    <!-- CART SIDEBAR -->
+
+    <div class="cart-sidebar-overlay hidden-cart" id="cart-sidebar">
+      <div class="cart-sidecar-panel">
+        <div class="cart-sidecar__header">
+          <img
+            src="image/cart-arrow-down.svg"
+            class="cart-sidecar__icon"
+            alt="Cart Down Arrow Icon"
+          />
+          <h2>Added to cart!</h2>
+        </div>
+
+        <div class="cart-sidecar__content" id="cart-items-list">
+          <!-- Dynamically populated cart items will go here -->
+        </div>
+
+        <div class="cart-panel__footer">
+          <a href="shop.html" class="btn-view-cart" id="btn-view-cart"
+            >View Cart (1)</a
+          >
+          <a href="checkout.html" class="btn-checkout" id="btn-checkout"
+            >Checkout</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <script src="src/index.js"></script>
   </body>
 </html>

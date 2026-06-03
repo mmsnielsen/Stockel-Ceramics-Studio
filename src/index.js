@@ -11,67 +11,81 @@ const validateEmail = (email) => {
     );
 };
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  let isValid = true;
-  let firstInvalidField = null;
+if (form) {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let isValid = true;
+    let firstInvalidField = null;
 
-  const userDetails = form.querySelectorAll(".user-details");
-  userDetails.forEach((detail) => {
-    const input = detail.querySelector("input, textarea");
-    const emailField = input.id === "email";
-    const isEmpty = input.value.trim() === "";
-    const isEmailValid = emailField && !validateEmail(input.value);
+    const userDetails = form.querySelectorAll(".user-details");
+    userDetails.forEach((detail) => {
+      const input = detail.querySelector("input, textarea");
+      const emailField = input.id === "email";
+      const isEmpty = input.value.trim() === "";
+      const isEmailValid = emailField && !validateEmail(input.value);
 
-    if (isEmpty || isEmailValid) {
-      detail.classList.add("error");
-      isValid = false;
-      if (!firstInvalidField) {
-        firstInvalidField = input;
-      }
-    } else {
-      detail.classList.remove("error");
-    }
-  });
-
-  if (isValid) {
-    sentMessage.classList.add("show");
-    form.reset();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    setTimeout(() => {
-      sentMessage.classList.remove("show");
-    }, 3000);
-  } else {
-    if (firstInvalidField) {
-      firstInvalidField.focus();
-    }
-  }
-});
-
-form
-  .querySelectorAll(".user-details input, .user-details textarea")
-  .forEach((input) => {
-    input.addEventListener("input", () => {
-      const detail = input.closest(".user-details");
-      if (detail.classList.contains("error")) {
+      if (isEmpty || isEmailValid) {
+        detail.classList.add("error");
+        isValid = false;
+        if (!firstInvalidField) {
+          firstInvalidField = input;
+        }
+      } else {
         detail.classList.remove("error");
       }
     });
+
+    if (isValid) {
+      sentMessage.classList.add("show");
+      form.reset();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      setTimeout(() => {
+        sentMessage.classList.remove("show");
+      }, 3000);
+    } else {
+      if (firstInvalidField) {
+        firstInvalidField.focus();
+      }
+    }
   });
 
+  form
+    .querySelectorAll(".user-details input, .user-details textarea")
+    .forEach((input) => {
+      input.addEventListener("input", () => {
+        const detail = input.closest(".user-details");
+        if (detail.classList.contains("error")) {
+          detail.classList.remove("error");
+        }
+      });
+    });
+}
+
 // CART SIDECAR //
+
+let cartItems = JSON.parse(localStorage.getItem("studioCart")) || [];
+let globalCartCountValue = cartItems.length;
 
 const registerButtons = document.querySelectorAll(".offer-card__register-btn");
 const cartSidebar = document.getElementById("cart-sidebar");
 const globalCartCount = document.getElementById("global-cart-count");
 const viewCartBtn = document.getElementById("btn-view-cart");
 const cartItemsList = document.getElementById("cart-items-list");
+const navCartTrigger = document.getElementById("nav-cart-trigger");
 
-let cartItems = [];
-let globalCartCountValue = 0;
+document.addEventListener("DOMContentLoaded", () => {
+  if (globalCartCount) globalCartCount.innerText = globalCartCountValue;
+  if (viewCartBtn)
+    viewCartBtn.innerText = `View Cart (${globalCartCountValue})`;
+  renderCartItems();
+});
 
 function renderCartItems() {
+  const cartItemsList = document.getElementById("cart-items-list");
+  if (!cartItemsList) return;
+
   cartItemsList.innerHTML = "";
+
   cartItems.forEach((item) => {
     const itemRow = document.createElement("div");
     itemRow.className = "cart-sidecar__item-row";
@@ -91,6 +105,8 @@ function renderCartItems() {
 
     cartItemsList.appendChild(itemRow);
   });
+
+  localStorage.setItem("studioCart", JSON.stringify(cartItems));
 }
 
 registerButtons.forEach((button) => {
@@ -140,8 +156,17 @@ registerButtons.forEach((button) => {
   });
 });
 
-cartSidebar.addEventListener("click", (e) => {
-  if (e.target === cartSidebar) {
-    cartSidebar.classList.add("hidden-cart");
-  }
-});
+if (cartSidebar) {
+  cartSidebar.addEventListener("click", (e) => {
+    if (e.target === cartSidebar) {
+      cartSidebar.classList.add("hidden-cart");
+    }
+  });
+}
+
+if (navCartTrigger && cartSidebar) {
+  navCartTrigger.addEventListener("click", (e) => {
+    e.preventDefault();
+    cartSidebar.classList.remove("hidden-cart");
+  });
+}
