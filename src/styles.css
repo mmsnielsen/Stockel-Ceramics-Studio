@@ -322,6 +322,7 @@ body {
 .contact-section {
   width: 100%;
   padding: 60px 0;
+  scroll-margin-top: 80px; /* Offsets the sticky header when linking to sections */
 }
 
 .about__hero,
