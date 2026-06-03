@@ -1,3 +1,5 @@
+// SENT MESSAGE POPUP //
+
 const form = document.querySelector("#contact-form");
 const sentMessage = document.getElementById("sent-message-popup");
 
@@ -56,3 +58,90 @@ form
       }
     });
   });
+
+// CART SIDECAR //
+
+const registerButtons = document.querySelectorAll(".offer-card__register-btn");
+const cartSidebar = document.getElementById("cart-sidebar");
+const globalCartCount = document.getElementById("global-cart-count");
+const viewCartBtn = document.getElementById("btn-view-cart");
+const cartItemsList = document.getElementById("cart-items-list");
+
+let cartItems = [];
+let globalCartCountValue = 0;
+
+function renderCartItems() {
+  cartItemsList.innerHTML = "";
+  cartItems.forEach((item) => {
+    const itemRow = document.createElement("div");
+    itemRow.className = "cart-sidecar__item-row";
+
+    const imgClass = item.isMembership
+      ? "cart-sidecar__img--membership"
+      : "cart-sidecar__img";
+
+    itemRow.innerHTML = `
+        <img src="${item.imgSrc}" class="${imgClass}" alt="Course Image" />
+        <div class="cart-sidecar__item-details">
+          <h3 class="cart-sidecar__item-title">${item.title}</h3>
+          <p class="cart-sidecar__item-price">${item.price}</p>
+          <p class="cart-sidecar__item-date">${item.date}</p>
+        </div>
+      `;
+
+    cartItemsList.appendChild(itemRow);
+  });
+}
+
+registerButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const courseCard = button.closest(".offer-card");
+
+    const courseTitle =
+      courseCard.querySelector(".offer-card__title").innerText;
+
+    const priceElement =
+      courseCard.querySelector(".offer-card__price") ||
+      courseCard.querySelector(".membership-card__price");
+    const coursePrice = priceElement ? priceElement.innerText : "0€";
+
+    const dateElement =
+      courseCard.querySelector(".offer-card__date") ||
+      courseCard.querySelector(".membership-card__period");
+    const courseDate = dateElement ? dateElement.innerText : "Acces Plan";
+
+    const imgElement =
+      courseCard.querySelector(".offer-card__image img") ||
+      courseCard.querySelector(".offer-card__image");
+    const courseImgSrc = imgElement ? imgElement.src : "image/circle-check.svg";
+
+    cartItems.push({
+      title: courseTitle,
+      price: coursePrice,
+      date: courseDate,
+      imgSrc: courseImgSrc,
+      isMembership: !imgElement,
+    });
+
+    globalCartCountValue += 1;
+
+    if (globalCartCount) {
+      globalCartCount.innerText = globalCartCountValue;
+    }
+    if (viewCartBtn) {
+      viewCartBtn.innerText = `View Cart (${globalCartCountValue})`;
+    }
+
+    renderCartItems();
+
+    if (cartSidebar) {
+      cartSidebar.classList.remove("hidden-cart");
+    }
+  });
+});
+
+cartSidebar.addEventListener("click", (e) => {
+  if (e.target === cartSidebar) {
+    cartSidebar.classList.add("hidden-cart");
+  }
+});
