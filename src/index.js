@@ -170,3 +170,79 @@ if (navCartTrigger && cartSidebar) {
     cartSidebar.classList.remove("hidden-cart");
   });
 }
+
+// SHOP.HTML //
+
+const productCards = document.querySelectorAll(".product-card");
+
+if (productCards.length > 0) {
+  productCards.forEach((card) => {
+    const btnDecrement = card.querySelector(".btn-decrement");
+    const btnIncrement = card.querySelector(".btn-increment");
+    const quantityDisplay = card.querySelector(".quantity");
+    const btnAddToCart = card.querySelector(".btn-add-to-cart");
+
+    let currentQty = 0;
+
+    if (btnIncrement) {
+      btnIncrement.addEventListener("click", () => {
+        currentQty += 1;
+        quantityDisplay.innerText = currentQty;
+      });
+    }
+
+    if (btnDecrement) {
+      btnDecrement.addEventListener("click", () => {
+        if (currentQty > 0) {
+          currentQty -= 1;
+          quantityDisplay.innerText = currentQty;
+        }
+      });
+    }
+
+    if (btnAddToCart) {
+      btnAddToCart.addEventListener("click", () => {
+        if (currentQty === 0) {
+          alert("Please select a quantity before adding to cart.");
+          return;
+        }
+
+        const productTitle = card.querySelector(
+          ".product-card__title",
+        ).innerText;
+        const productPrice = card.querySelector(
+          ".product-card__price",
+        ).innerText;
+
+        const imgElement = card.querySelector(".product-card__image img");
+        const productImgSrc = imgElement
+          ? imgElement.src
+          : "image/cart-shopping.svg";
+
+        for (let i = 0; i < currentQty; i++) {
+          cartItems.push({
+            title: productTitle,
+            price: productPrice,
+            date: "Studio Merchandise", // Clean custom placeholder text line
+            imgSrc: productImgSrc,
+            isMembership: false,
+          });
+        }
+
+        globalCartCountValue += currentQty;
+        if (globalCartCount) globalCartCount.innerText = globalCartCountValue;
+        if (viewCartBtn)
+          viewCartBtn.innerText = `View Cart (${globalCartCountValue})`;
+
+        renderCartItems();
+
+        if (cartSidebar) {
+          cartSidebar.classList.remove("hidden-cart");
+        }
+
+        currentQty = 0;
+        quantityDisplay.innerText = "0";
+      });
+    }
+  });
+}

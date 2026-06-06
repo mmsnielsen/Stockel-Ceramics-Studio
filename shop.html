@@ -19,9 +19,13 @@
         <nav class="navigation">
           <ul class="nav-list">
             <li><a href="index.html#about" class="nav-link">About</a></li>
-            <li><a href="index.html#workshops" class="nav-link">Workshops</a></li>
+            <li>
+              <a href="index.html#workshops" class="nav-link">Workshops</a>
+            </li>
             <li><a href="index.html#classes" class="nav-link">Classes</a></li>
-            <li><a href="index.html#memberships" class="nav-link">Memberships</a></li>
+            <li>
+              <a href="index.html#memberships" class="nav-link">Memberships</a>
+            </li>
             <li><a href="index.html#contact" class="nav-link">Contact</a></li>
             <li>
               <a href="#" class="nav-link nav-cart" id="nav-cart-trigger">
@@ -38,83 +42,123 @@
       </header>
 
       <!-- Shop content goes here -->
-      
+
       <section class="shop-content">
-          <h1>Welcome to the Stockel Ceramics Studio Shop!</h1>
-          <p>Here you'll find Stockel Ceramics merchandise, pottery tools, and more.</p>
-          
-          <div class="shop-grid">
-        <!-- Example product listing -->
-        <div class="product-card">
-        <div class="product-card__image">
-            <img src="image/studio-apron.jpg" alt="Studio Logo Apron">
-        </div>
-        <div class="product-card__info">
-            <h3 class="product-card__title">Studio Apron</h3>
-            <p class="product-card__description">A comfortable split leg apron for all your pottery sessions.</p>
+        <h1>Welcome to the Stockel Ceramics Studio Shop!</h1>
+        <p>
+          Here you'll find Stockel Ceramics merchandise, pottery tools, and
+          more.
+        </p>
 
-            <div class="product-card__footer">
-            <p class="product-card__price">€45.00</p>
-            <button class="btn-buy">
-                <span class="btn-buy__icon">+</span>
-            </button>
+        <div class="shop-grid">
+          <!-- Example product listing -->
+          <div class="product-card">
+            <div class="product-card__image">
+              <img src="image/studio-apron.jpg" alt="Studio Logo Apron" />
             </div>
-        </div>
-    </div>
-    
-    <div class="product-card">
-        <div class="product-card__image">
-            <img src="image/starter-tool-kit.jpg" alt="Pottery Starter Tool Kit">
-        </div>
-        <div class="product-card__info">
-            <h3 class="product-card__title">Starter Tool Kit</h3>
-            <p class="product-card__description">Everything you need to get started with pottery.</p>
 
-            <div class="product-card__footer">
-            <p class="product-card__price">€25.00</p>
-            <button class="btn-buy">
-                <span class="btn-buy__icon">+</span>
-            </button>
+            <div class="product-card__info">
+              <h3 class="product-card__title">Studio Apron</h3>
+              <p class="product-card__description">
+                A comfortable split leg apron for all your pottery sessions.
+              </p>
             </div>
-        </div>
-    </div>
-    
-    <div class="product-card">
-    <div class="product-card__image">
-        <img src="image/studio-tshirt.jpg" alt="Studio Logo T-Shirt">
-    </div>
-    <div class="product-card__info">
-        <h3 class="product-card__title">Studio T-Shirt</h3>
-        <p class="product-card__description">A cotton t-shirt with the Stockel Ceramics logo.</p>
+            <div class="product-card__details">
+              <p class="product-card__price">€45.00</p>
+              <div class="color-selector">
+                <input type="radio" id="color-grey" name="apron-color" value="slate-grey" checked />
+                <label for="color-grey">Slate Grey</label>
+                <input type="radio" id="color-green" name="apron-color" value="sage-green" />
+                <label for="color-green">Sage Green</label>
+                <input type="radio" id="color-beige" name="apron-color" value="beige" />
+                <label for="color-beige">Beige</label>
+                <input type="radio" id="color-blue" name="apron-color" value="grey-blue" />
+                <label for="color-blue">Grey Blue</label>
+              </div>
+            </div>
+            <div class="product-card__footer">
+              <button class="btn-decrement">-</button>
+              <span class="quantity">0</span>
+              <button class="btn-increment">+</button>
+              <button class="btn-add-to-cart">Add to Cart</button>
+            </div>
+          </div>
 
-        <div class="product-card__footer">
-            <p class="product-card__price">€25.00</p>
-            <button class="btn-buy">
-                <span class="btn-buy__icon">+</span>
-            </button>
-        </div>
-    </div>
-</div>
+          <div class="product-card">
+            <div class="product-card__image">
+              <img
+                src="image/starter-tool-kit.jpg"
+                alt="Pottery Starter Tool Kit"
+              />
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__title">Starter Tool Kit</h3>
+              <p class="product-card__description">
+                Everything you need to get started with pottery.
+              </p>
+            </div>
+            <div class="product-card__details">
+              <p class="product-card__price">€35.00</p>
+            </div>
+            <div class="product-card__footer">
+              <button class="btn-decrement">-</button>
+              <span class="quantity">0</span>
+              <button class="btn-increment">+</button>
+              <button class="btn-add-to-cart">Add to Cart</button>
+            </div>
+          </div>
 
-<div class="product-card">
-    <div class="product-card__image">
-        <img src="image/studio-mugs.jpg" alt="Studio Logo Mugs">
-    </div>
-    <div class="product-card__info">
-        <h3 class="product-card__title">Studio Mugs</h3>
-        <p class="product-card__description">Stoneware Stockel Ceramics logo mugs.</p>
+          <div class="product-card">
+            <div class="product-card__image">
+              <img src="image/studio-tshirt.jpg" alt="Studio Logo T-Shirt" />
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__title">Studio T-Shirt</h3>
+              <p class="product-card__description">
+                A cotton t-shirt with the Stockel Ceramics logo.
+              </p>
+            </div>
+            <div class="product-card__details">
+              <p class="product-card__price">€25.00</p>
+              <div class="size-selector">
+                <select class="size-dropdown">
+                  <option value="small">S</option>
+                  <option value="medium">M</option>
+                  <option value="large">L</option>
+                  <option value="x-large">XL</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="product-card__footer">
+              <button class="btn-decrement">-</button>
+              <span class="quantity">0</span>
+              <button class="btn-increment">+</button>
+              <button class="btn-add-to-cart">Add to Cart</button>
+            </div>
+          </div>
 
-        <div class="product-card__footer">
-            <p class="product-card__price">€20.00</p>
-            <button class="btn-buy">
-                <span class="btn-buy__icon">+</span>
-            </button>
-        </div>
-    </div>
-</div>
-</div>
-          <!-- Add more products as needed -->
-        </div>
+          <div class="product-card">
+            <div class="product-card__image">
+              <img src="image/studio-mugs.jpg" alt="Studio Logo Mugs" />
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__title">Studio Mugs</h3>
+              <p class="product-card__description">
+                Stoneware Stockel Ceramics logo mugs.
+              </p>
+            </div>
+            <div class="product-card__details">
+              <p class="product-card__price">€20.00</p>
+            </div>
+            <div class="product-card__footer">
+              <button class="btn-decrement">-</button>
+              <span class="quantity">0</span>
+              <button class="btn-increment">+</button>
+              <button class="btn-add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+        <!-- Add more products as needed -->
       </section>
 
       <footer class="footer">
@@ -170,12 +214,11 @@
           </div>
         </div>
       </footer>
-      
     </main>
 
-<!-- CART SIDEBAR -->
+    <!-- CART SIDEBAR -->
 
-      <!-- CART SIDEBAR -->
+    <!-- CART SIDEBAR -->
 
     <div class="cart-sidebar-overlay hidden-cart" id="cart-sidebar">
       <div class="cart-sidecar-panel">
