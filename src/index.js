@@ -86,7 +86,7 @@ function renderCartItems() {
 
   cartItemsList.innerHTML = "";
 
-  cartItems.forEach((item) => {
+  cartItems.forEach((item, index) => {
     const itemRow = document.createElement("div");
     itemRow.className = "cart-sidecar__item-row";
 
@@ -101,9 +101,25 @@ function renderCartItems() {
           <p class="cart-sidecar__item-price">${item.price}</p>
           <p class="cart-sidecar__item-date">${item.date}</p>
         </div>
+        <button class="btn-remove-item" data-index="${index}">&times;</button>
       `;
 
     cartItemsList.appendChild(itemRow);
+  });
+
+  const removeButtons = cartItemsList.querySelectorAll(".btn-remove-item");
+  removeButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const itemIndex = parseInt(button.getAttribute("data-index"));
+      cartItems.splice(itemIndex, 1);
+      globalCartCountValue = cartItems.length;
+
+      if (globalCartCount) globalCartCount.innerText = globalCartCountValue;
+      if (viewCartBtn)
+        viewCartBtn.innerText = `view Cart (${globalCartCountValue})`;
+
+      renderCartItems();
+    });
   });
 
   localStorage.setItem("studioCart", JSON.stringify(cartItems));
