@@ -66,22 +66,28 @@ if (form) {
 let cartItems = JSON.parse(localStorage.getItem("studioCart")) || [];
 let globalCartCountValue = cartItems.length;
 
+const globalCartCount = document.getElementById("global-cart-count");
 const registerButtons = document.querySelectorAll(".offer-card__register-btn");
 const cartSidebar = document.getElementById("cart-sidebar");
-const globalCartCount = document.getElementById("global-cart-count");
 const viewCartBtn = document.getElementById("btn-view-cart");
 const cartItemsList = document.getElementById("cart-items-list");
+const productCards = document.querySelectorAll(".product-card");
+
+const summaryContainer = document.getElementById("checkout-items-summary");
+const checkoutForm = document.getElementById("checkout-form");
 const navCartTrigger = document.getElementById("nav-cart-trigger");
 
 document.addEventListener("DOMContentLoaded", () => {
   if (globalCartCount) globalCartCount.innerText = globalCartCountValue;
+
   if (viewCartBtn)
-    viewCartBtn.innerText = `View Cart (${globalCartCountValue})`;
+    viewCartBtn.innerText = `View Shop (${globalCartCountValue})`;
+
   renderCartItems();
+  renderCheckoutSummary();
 });
 
 function renderCartItems() {
-  const cartItemsList = document.getElementById("cart-items-list");
   if (!cartItemsList) return;
 
   cartItemsList.innerHTML = "";
@@ -116,7 +122,7 @@ function renderCartItems() {
 
       if (globalCartCount) globalCartCount.innerText = globalCartCountValue;
       if (viewCartBtn)
-        viewCartBtn.innerText = `view Cart (${globalCartCountValue})`;
+        viewCartBtn.innerText = `View Shop (${globalCartCountValue})`;
 
       renderCartItems();
     });
@@ -124,6 +130,32 @@ function renderCartItems() {
 
   localStorage.setItem("studioCart", JSON.stringify(cartItems));
 }
+
+function renderCheckoutSummary() {
+  if (!summaryContainer) return;
+
+  summaryContainer.innerHTML = "";
+
+  if (cartItems.length === 0) {
+    summaryContainer.innerHTML = `<p style="color: #888; padding: 20px 0;">Your cart is currently empty. <a href="index.html" style="color: #973c00;">Go back to courses</a>.</p>`;
+  } else {
+    cartItems.forEach((item) => {
+      const row = document.createElement("div");
+      row.className = "cart-sidecar__item-row";
+
+      row.innerHTML = `<img src="${item.imgSrc}" class="cart-sidecar__img" alt="Item Image" style="border-radius: 4px;" />
+      <div class="cart-sidecar__item-details">
+        <h3 class="cart-sidecar__item-title" style="color: #333;">${item.title}</h3>
+          <p class="cart-sidecar__item-price" style="color: #973c00; font-weight: 600;">${item.price}</p>
+          <p class="cart-sidecar__item-date" style="color: #666; font-size: 13px;">${item.date}</p>
+        </div>
+        `;
+      summaryContainer.appendChild(row);
+    });
+  }
+}
+
+//Course registration buttons //
 
 registerButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -161,7 +193,7 @@ registerButtons.forEach((button) => {
       globalCartCount.innerText = globalCartCountValue;
     }
     if (viewCartBtn) {
-      viewCartBtn.innerText = `View Cart (${globalCartCountValue})`;
+      viewCartBtn.innerText = `View Shop (${globalCartCountValue})`;
     }
 
     renderCartItems();
@@ -172,24 +204,7 @@ registerButtons.forEach((button) => {
   });
 });
 
-if (cartSidebar) {
-  cartSidebar.addEventListener("click", (e) => {
-    if (e.target === cartSidebar) {
-      cartSidebar.classList.add("hidden-cart");
-    }
-  });
-}
-
-if (navCartTrigger && cartSidebar) {
-  navCartTrigger.addEventListener("click", (e) => {
-    e.preventDefault();
-    cartSidebar.classList.remove("hidden-cart");
-  });
-}
-
 // SHOP.HTML //
-
-const productCards = document.querySelectorAll(".product-card");
 
 if (productCards.length > 0) {
   productCards.forEach((card) => {
@@ -248,7 +263,7 @@ if (productCards.length > 0) {
         globalCartCountValue += currentQty;
         if (globalCartCount) globalCartCount.innerText = globalCartCountValue;
         if (viewCartBtn)
-          viewCartBtn.innerText = `View Cart (${globalCartCountValue})`;
+          viewCartBtn.innerText = `View Shop (${globalCartCountValue})`;
 
         renderCartItems();
 
@@ -260,5 +275,48 @@ if (productCards.length > 0) {
         quantityDisplay.innerText = "0";
       });
     }
+  });
+}
+
+// TERMS CHECKBOX //
+
+if (checkoutForm) {
+  checkoutForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const termsCheckbox = document.getElementById("checkout-terms");
+
+    if (!termsCheckbox.checked) {
+      alert(
+        "You must agree to the Terms of Service and Student Contract to continue.",
+      );
+      return;
+    }
+
+    alert(
+      "Registration Successful! You'll be notified as soon as your items are dispatched or your course details are confirmed.",
+    );
+
+    cartItems = [];
+    localStorage.removeItem("studioCart");
+
+    window.location.href = "index.html";
+  });
+}
+
+// auto close listeners //
+
+if (cartSidebar) {
+  cartSidebar.addEventListener("click", (e) => {
+    if (e.target === cartSidebar) {
+      cartSidebar.classList.add("hidden-cart");
+    }
+  });
+}
+
+if (navCartTrigger && cartSidebar) {
+  navCartTrigger.addEventListener("click", (e) => {
+    e.preventDefault();
+    cartSidebar.classList.remove("hidden-cart");
   });
 }
