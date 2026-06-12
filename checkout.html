@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <main class="studio-page">
+      <header class="header">
+        <a href="index.html" class="logo">
+          <span class="logo__text">Stockel</span>
+          <div class="logo__square"></div>
+          <!-- The simple square outline -->
+          <span class="logo__text">Ceramics</span>
+        </a>
+
+        <nav class="navigation">
+          <ul class="nav-list">
+            <li><a href="index.html#about" class="nav-link">About</a></li>
+            <li>
+              <a href="index.html#workshops" class="nav-link">Workshops</a>
+            </li>
+            <li><a href="index.html#classes" class="nav-link">Classes</a></li>
+            <li>
+              <a href="index.html#memberships" class="nav-link">Memberships</a>
+            </li>
+            <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            <li>
+              <a href="#" class="nav-link nav-cart" id="nav-cart-trigger">
+                <img
+                  src="image/cart-shopping.svg"
+                  class="nav-cart__icon"
+                  alt="Shopping Cart Icon"
+                />
+                <span class="nav-cart-count" id="global-cart-count">0</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!--REGISTRATION + CHECKOUT FORM-->
+
+      <section class="checkout-page__section">
+        <div class="checkout-page__header">
+          <h2 class="section-title">Complete Your Registration</h2>
+          <p class="section-subtitle">Please provide your details below</p>
+        </div>
+
+        <div class="checkout-page__container">
+          <div class="checkout-page__summary-panel">
+            <h3 class="checkout-page-title">Your Order Summary</h3>
+            <div id="checkout-items-summary">
+              <!--JS automatically stacks user cart rows here-->
+            </div>
+          </div>
+
+          <form class="checkout-form-card" id="checkout-form">
+            <h3 class="checkout-form-header">Student Details</h3>
+
+            <div class="checkout-user-details">
+              <input
+                type="text"
+                id="checkout-name"
+                placeholder="Full Name"
+                required
+              />
+              <input
+                type="email"
+                id="checkut-email"
+                placeholder="Email Address"
+                required
+              />
+              <input
+                type="tel"
+                id="checkout-phone"
+                placeholder="Phone Number"
+                required
+              />
+
+              <div class="checkout-terms-checkbox">
+                <input type="checkbox" id="checkbox-terms" required />
+                <label for="checkout-terms">
+                  I confirm I have read and agree to the
+                  <a href="terms.html" target="_blank">Terms of Service</a>
+                  and the Student Contract.
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-checkout-submit">
+              Confirm & Pay
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!--TERMS FOOTER-->
+
+      <footer class="footer">
+        <div class="site-footer__container">
+          <div class="site-footer__top-row">
+            <nav class="site-footer__nav">
+              <a href="index.html">Home</a>
+              <a href="index.html#about">Our Story</a>
+              <a href="index.html#workshops">Courses</a>
+              <a href="shop.html">Studio Shop</a>
+              <a href="gallery.html">Gallery</a>
+              <a href="terms.html">Terms of Service</a>
+            </nav>
+            <div class="site-footer__socials">
+              <a
+                href="https://instagram.com/stockelceramics"
+                target="_blank"
+                aria-label="Instagram"
+                class="social-icons"
+              >
+                <img
+                  src="image/instagram-logo.svg"
+                  alt="IG logo"
+                  class="social-logo-svg"
+                />
+              </a>
+              <a
+                href="index.html#contact"
+                aria-label="Contact Email"
+                class="social-icons"
+              >
+                <img
+                  src="image/email-logo.svg"
+                  alt="Email logo"
+                  class="social-logo-svg"
+                />
+              </a>
+            </div>
+          </div>
+
+          <hr class="site-footer__divider" />
+
+          <div class="site-footer__bottom-row">
+            <div class="site-footer__brand">
+              <span class="site-footer__logo">Stockel</span>
+              <div class="site-footer__logo-square"></div>
+              <!-- The simple square outline -->
+              <span class="site-footer__logo">Ceramics</span>
+            </div>
+            <p class="site-footer__copyright">
+              © 2026 Stockel ⃞ Ceramics. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <script src="src/index.js"></script>
+  </body>
+</html>
