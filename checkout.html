@@ -57,7 +57,7 @@
             </div>
           </div>
 
-          <form class="checkout-form-card" id="checkout-form">
+          <form class="checkout-form-card" id="checkout-form" novalidate>
             <h3 class="checkout-form-header">Student Details</h3>
 
             <div class="checkout-user-details">
@@ -67,27 +67,31 @@
                 placeholder="Full Name"
                 required
               />
+            </div>
+            <div class="checkout-user-details">
               <input
                 type="email"
-                id="checkut-email"
+                id="checkout-email"
                 placeholder="Email Address"
                 required
               />
+            </div>
+            <div class="checkout-user-details">
               <input
                 type="tel"
                 id="checkout-phone"
                 placeholder="Phone Number"
                 required
               />
+            </div>
 
-              <div class="checkout-terms-checkbox">
-                <input type="checkbox" id="checkbox-terms" required />
-                <label for="checkout-terms">
-                  I confirm I have read and agree to the
-                  <a href="terms.html" target="_blank">Terms of Service</a>
-                  and the Student Contract.
-                </label>
-              </div>
+            <div class="checkout-terms-checkbox">
+              <input type="checkbox" id="checkout-terms" required />
+              <label for="checkout-terms">
+                I confirm I have read and agree to the
+                <a href="terms.html" target="_blank">Terms of Service</a>
+                and the Student Contract.
+              </label>
             </div>
 
             <button type="submit" class="btn-checkout-submit">
@@ -153,6 +157,25 @@
         </div>
       </footer>
     </main>
+
+    <!-- REGISTRATION MSG POP UP -->
+
+    <div class="registration-msg-overlay hidden" id="registration-msg-popup">
+      <div class="registration-msg-card">
+        <h2 class="registration-msg__header">
+          <img
+            src="image/address-card.svg"
+            class="registration-msg__image"
+            alt="address card icon"
+          />Registration Successful!
+        </h2>
+        <p>
+          You'll be notified as soon as your items are dispatched or your course
+          details are confirmed
+        </p>
+      </div>
+    </div>
+
     <script src="src/index.js"></script>
   </body>
 </html>

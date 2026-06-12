@@ -1390,3 +1390,114 @@ body {
 .btn-checkout-submit:hover {
   background-color: #7a3100;
 }
+
+/* CHECKOUT FORM */
+
+.checkout-form-card .checkout-user-details {
+  width: 100%;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.checkout-user-details input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.checkout-form-header {
+  color: #973c00;
+  font-family: "Serif", Georgia, serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.checkout-terms-checkbox {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+/* CHECKOUT POPUP */
+
+.registration-msg-overlay {
+  align-items: center;
+  backdrop-filter: blur(4px); /* Blurs the background content */
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black */
+  display: none;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  transition: opacity 0.3s ease;
+  width: 100%;
+  z-index: 9999; /* Above all other content */
+}
+
+.registration-msg-overlay.show {
+  display: flex;
+}
+
+.registration-msg-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow:
+    0px 4px 6px -1px rgba(151, 60, 0, 0.3),
+    0px 2px 4px -2px rgba(151, 60, 0, 0.2); /* Subtle shadow for depth */
+  max-width: 400px;
+  padding: 40px 30px;
+  text-align: center;
+  animation: modalPopUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.registration-msg__header {
+  color: #973c00;
+  font-family: "Serif", Georgia, serif;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.registration-msg__image {
+  height: 25px;
+  margin-right: 10px;
+  object-fit: contain;
+  width: 25px;
+  filter: invert(24%) sepia(87%) saturate(2321%) hue-rotate(18deg)
+    brightness(91%) contrast(101%);
+}
+
+.registration-msg-card p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
+@keyframes modalPopUp {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* DEVICES LAYOUT */

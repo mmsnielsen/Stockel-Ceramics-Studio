@@ -21,7 +21,7 @@ if (form) {
     userDetails.forEach((detail) => {
       const input = detail.querySelector("input, textarea");
       const emailField = input.id === "email";
-      const isEmpty = input.value.trim() === "";
+      const isEmpty = (input?.value?.trim() || "") === "";
       const isEmailValid = emailField && !validateEmail(input.value);
 
       if (isEmpty || isEmailValid) {
@@ -137,7 +137,7 @@ function renderCheckoutSummary() {
   summaryContainer.innerHTML = "";
 
   if (cartItems.length === 0) {
-    summaryContainer.innerHTML = `<p style="color: #888; padding: 20px 0;">Your cart is currently empty. <a href="index.html" style="color: #973c00;">Go back to courses</a>.</p>`;
+    summaryContainer.innerHTML = `<p style="color: #888; padding: 20px 0;">Your cart is currently empty. <a href="index.html#workshops" style="color: #973c00;">Go back to courses</a>.</p>`;
   } else {
     cartItems.forEach((item) => {
       const row = document.createElement("div");
@@ -278,32 +278,6 @@ if (productCards.length > 0) {
   });
 }
 
-// TERMS CHECKBOX //
-
-if (checkoutForm) {
-  checkoutForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const termsCheckbox = document.getElementById("checkout-terms");
-
-    if (!termsCheckbox.checked) {
-      alert(
-        "You must agree to the Terms of Service and Student Contract to continue.",
-      );
-      return;
-    }
-
-    alert(
-      "Registration Successful! You'll be notified as soon as your items are dispatched or your course details are confirmed.",
-    );
-
-    cartItems = [];
-    localStorage.removeItem("studioCart");
-
-    window.location.href = "index.html";
-  });
-}
-
 // auto close listeners //
 
 if (cartSidebar) {
@@ -320,3 +294,99 @@ if (navCartTrigger && cartSidebar) {
     cartSidebar.classList.remove("hidden-cart");
   });
 }
+
+// TERMS CHECKBOX //
+
+document.addEventListener("submit", (e) => {
+  if (e.target && e.target.id === "checkout-form") {
+    e.preventDefault();
+
+    let isCheckoutValid = true;
+    let firstCheckoutInvalidField = null;
+
+    const activeForm = e.target;
+    const checkoutName = activeForm.querySelector("#checkout-name");
+    const checkoutEmail = activeForm.querySelector("#checkout-email");
+    const checkoutPhone = activeForm.querySelector("#checkout-phone");
+    const termsCheckbox = activeForm.querySelector("#checkout-terms");
+    const registrationPopup = document.getElementById("registration-msg-popup");
+
+    activeForm.querySelectorAll("input").forEach((input) => {
+      input.style.borderColor = "";
+      input.style.backgroundColor = "";
+    });
+
+    if (checkoutName && checkoutName.value.trim() === "") {
+      checkoutName.style.borderColor = "#ef4444";
+      checkoutName.style.backgroundColor = "#fef2f2";
+      isCheckoutValid = false;
+      if (!firstCheckoutInvalidField) firstCheckoutInvalidField = checkoutName;
+    }
+
+    const validateCheckoutEmailStr = (email) => {
+      return String(email)
+        .toLowerCase()
+        .match(
+          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+        );
+    };
+
+    if (
+      checkoutEmail &&
+      (checkoutEmail.value.trim() === "" ||
+        !validateCheckoutEmailStr(checkoutEmail.value))
+    ) {
+      checkoutEmail.style.borderColor = "#ef4444";
+      checkoutEmail.style.backgroundColor = "#fef2f2";
+      isCheckoutValid = false;
+      if (!firstCheckoutInvalidField) firstCheckoutInvalidField = checkoutEmail;
+    }
+
+    if (checkoutPhone && checkoutPhone.value.trim() === "") {
+      checkoutPhone.style.borderColor = "#ef4444";
+      checkoutPhone.style.backgroundColor = "#fef2f2";
+      isCheckoutValid = false;
+      if (!firstCheckoutInvalidField) firstCheckoutInvalidField = checkoutPhone;
+    }
+
+    if (termsCheckbox && !termsCheckbox.checked) {
+      alert(
+        "You must agree to the Terms of Service and Student Contract to continue.",
+      );
+      return;
+    }
+
+    if (isCheckoutValid) {
+      if (registrationPopup) {
+        registrationPopup.classList.add("show");
+      }
+
+      activeForm.reset();
+
+      cartItems = [];
+      globalCartCountValue = 0;
+      localStorage.removeItem("studioCart");
+
+      const globalCartCount = document.getElementById("global-cart-count");
+      if (globalCartCount) globalCartCount.innerText = "0";
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+
+      setTimeout(() => {
+        if (registrationPopup) registrationPopup.classList.remove("show");
+        window.location.href = "index.html";
+      }, 3000);
+    } else {
+      if (firstCheckoutInvalidField) {
+        firstCheckoutInvalidField.focus();
+      }
+    }
+  }
+});
+
+document.addEventListener("input", (e) => {
+  if (e.target && e.target.closest("#checkout-form")) {
+    e.target.style.borderColor = "";
+    e.target.style.backgroundColor = "";
+  }
+});
