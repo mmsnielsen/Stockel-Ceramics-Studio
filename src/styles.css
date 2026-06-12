@@ -436,7 +436,7 @@ body {
 .section__header,
 .section__list,
 .values-grid,
-.contact-us_container {
+.contact-us__container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 40px; /* Keeps your nice breathing room on the sides */
@@ -634,14 +634,16 @@ body {
   text-align: center;
 }
 
-.offer__contact-link {
+.offer__contact-link,
+.termsofservice-link {
   color: #973c00;
   font-weight: 600;
   text-decoration: none;
   transition: color 0.2s;
 }
 
-.offer__contact-link:hover {
+.offer__contact-link:hover,
+.termsofservice-link:hover {
   color: #7a3100;
 }
 
@@ -727,7 +729,7 @@ body {
 
 /* CONTACT SECTION*/
 
-.contact-us_header {
+.contact-us__header {
   margin-bottom: 40px;
   text-align: center;
 }
@@ -748,7 +750,7 @@ body {
   margin-top: 30px;
 }
 
-.contact-us_container {
+.contact-us__container {
   align-items: start;
   display: grid;
   gap: 80px;
@@ -1268,4 +1270,123 @@ body {
     transform: translateX(0);
     opacity: 1;
   }
+}
+
+/* CHECKOUT */
+
+.checkout-page-section {
+  background: #fcfcfc;
+  padding: 80px 0;
+  width: 100%;
+}
+
+.checkout-page__header {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.checkout-page__container {
+  align-items: start;
+  display: grid;
+  gap: 80px;
+  grid-template-columns: 1fr 1.2fr;
+  margin: 0 auto;
+  max-width: 950px;
+  padding: 0 40px;
+}
+
+.checkout-page-title {
+  color: #333;
+  font-family: "serif", georgia, serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.checkout-form-card {
+  background: #fcfcfc;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  box-shadow:
+    0px 4px 6px -1px rgba(151, 60, 0, 0.3),
+    0px 2px 4px -2px rgba(151, 60, 0, 0.2); /* Subtle shadow for depth */
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.checkout-form-header {
+  color: #973c00;
+  font-family: "serif", Georgia, serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.checkout-user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.checkout-user-details input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.checkout-user-details input:focus {
+  border-color: #973c00;
+}
+
+.checkout-terms-checkbox {
+  align-items: flex-start;
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.checkout-terms-checkbox input[type="checkbox"] {
+  cursor: pointer;
+  margin-top: 10px;
+  width: auto;
+}
+
+.checkout-terms-checkbox label {
+  color: #666;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.checkout-terms-checkbox a {
+  color: #973c00;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.btn-checkout-submit {
+  background-color: #973c00;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 14px;
+  margin-top: 24px;
+  transition: background-color 0.2s;
+  width: 100%;
+}
+
+.btn-checkout-submit:hover {
+  background-color: #7a3100;
 }
