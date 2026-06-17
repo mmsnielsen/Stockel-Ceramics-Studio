@@ -17,17 +17,24 @@ body {
 
 /* Header & Logo */
 .header {
-  width: 100%; /* Changed from 1030px to be responsive */
-  height: 80px;
-  padding: 0 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  position: sticky; /* Keeps header at top while scrolling */
+  position: sticky;
   top: 0;
-  z-index: 1000;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 999;
+  border-bottom: 1px solid #f3f4f6;
+  padding: 16px 0;
+  display: flex;
+  justify-content: space-between; /* Pushes logo left, navigation right */
+  align-items: center;
+}
+
+.header .logo {
+  margin-left: 10%;
+}
+
+.header .navigation {
+  margin-right: 10%;
 }
 
 .logo {
@@ -512,7 +519,9 @@ body {
 
 .section__header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 0;
 }
 
 .section-title {
@@ -522,8 +531,9 @@ body {
 
 .section__list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
+  grid-template-columns: repeat(3, 1fr);
+  padding-top: 20px;
 }
 
 .offer-card {
@@ -534,7 +544,7 @@ body {
     0px 2px 4px -2px rgba(151, 60, 0, 0.2); /* Subtle shadow for depth */
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .offer-card__image {
@@ -543,6 +553,7 @@ body {
   height: 200px;
   object-fit: cover;
   width: 100%;
+  overflow: hidden;
 }
 
 .offer-card__content {
@@ -696,7 +707,9 @@ body {
 
 .offer-card--most-popular {
   border: 2px solid #fef3c6;
+  margin-top: 0;
   position: relative;
+  z-index: 10;
 }
 
 .offer-card__badge {
@@ -710,11 +723,12 @@ body {
   left: 50%;
   padding: 4px 12px;
   position: absolute;
-  top: -10px;
+  top: -14px;
   transform: translateX(-50%);
+  z-index: 12;
 }
 
-.offer-card__register-btn--most-popular {
+/*.offer-card__register-btn--most-popular {
   background-color: #fef3c6;
   color: #973c00;
 }
@@ -726,7 +740,7 @@ body {
   transition:
     background 0.2s,
     opacity 0.2s;
-}
+}*/
 
 /* CONTACT SECTION*/
 
@@ -926,6 +940,11 @@ body {
   justify-content: space-between;
 }
 
+.footer-logo {
+  cursor: pointer;
+  text-decoration: none;
+}
+
 .site-footer__logo {
   color: #973c00;
   font-size: 16px;
@@ -1013,10 +1032,12 @@ body {
 .contract-link {
   color: #973c00;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-.contract-link:hover {
-  text-decoration: none;
+.contract-link:hover,
+.contract-link:hover strong {
+  color: #7a3100;
 }
 
 /* SENT MESSAGE POPUP */
@@ -1133,6 +1154,7 @@ body {
   flex-direction: row;
   gap: 20px;
   padding: 20px 0;
+  width: 100%;
 }
 
 .cart-sidecar__item-row:first-child {
@@ -1251,7 +1273,7 @@ body {
   height: 24px;
   justify-content: center;
   line-height: 1;
-  margin-left: 10px;
+  margin-left: auto;
   padding-bottom: 2px;
   transition: all 0.2 ease;
   width: 24px;
@@ -1506,9 +1528,21 @@ body {
 @media screen and (max-width: 768px) {
   .header {
     flex-direction: column;
-    gap: 16px;
-    padding: 20px 16px;
+    gap: 12px;
+    padding: 16px 20px;
     height: auto;
+  }
+
+  .header .logo {
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .header .navigation {
+    margin-right: 0;
+    width: 100%;
   }
 
   .nav-list {
@@ -1517,10 +1551,15 @@ body {
     justify-content: center;
     gap: 16px;
     padding: 0;
+    margin: 0;
   }
 
   .nav-link {
     font-size: 13px;
+  }
+
+  .nav-cart {
+    justify-content: center;
   }
 
   .hero {
@@ -1593,9 +1632,11 @@ body {
   .section__list {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 40px;
     padding: 0 24px;
+    position: relative;
     width: 100%;
+    z-index: 1;
   }
 
   .offer-card {
